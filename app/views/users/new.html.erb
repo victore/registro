@@ -1,0 +1,11 @@
+  <div class="container">
+    <%= render "stanley" %>
+    <div class="row">
+      <div class="col s6 offset-s3">
+        <%= render 'form', user: @user %>
+          <div class="center-align">
+            <h5><%= link_to 'Ver todos', users_path %></h5>
+          </div>
+      </div>
+    </div>
+  </div>

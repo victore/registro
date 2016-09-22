@@ -1,0 +1,61 @@
+<%= form_for(user) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <i class="material-icons prefix">account_circle</i>
+    <%= f.label 'Nombre' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Apellido' %>
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <i class="material-icons prefix">phone</i>
+    <%= f.label 'Teléfono' %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Fecha de Nacimiento' %>
+    <%= f.datetime_select :birthday %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Ocupación' %>
+    <%= f.text_field :ocupation %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Estado' %>
+    <%= f.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Delegación' %>
+    <%= f.text_field :county %>
+  </div>
+
+  <div class="actions center-align">
+    <div class="waves-effect waves-light btn stanley_btn stanley_bg">
+      <%= f.submit 'Guardar' %>
+    </div>
+  </div>
+<% end %>
